@@ -1,12 +1,13 @@
 package entiry;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author ljx
  * @Date 2020/12/25 17:51
  **/
-public class ResponseEntity<T> implements Serializable {
+public class Result<T> implements Serializable {
 
     private static final long serialVersionUID = 5819174480253773214L;
 
@@ -15,6 +16,8 @@ public class ResponseEntity<T> implements Serializable {
     private Object data;
 
     private Integer errorCode = 0;
+
+    private Long timestamp;
 
     public Integer getCode() {
         return code;
@@ -50,4 +53,15 @@ public class ResponseEntity<T> implements Serializable {
 
     public String errorMsg;
 
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Result() {
+        setTimestamp(System.currentTimeMillis());
+    }
 }

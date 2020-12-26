@@ -1,6 +1,8 @@
 package utils;
 
-import entiry.ResponseEntity;
+import entiry.Result;
+import org.springframework.http.ResponseEntity;
+
 
 /**
  * @Author ljx
@@ -14,9 +16,9 @@ public class ResultUtils {
      * @return
      */
     public static ResponseEntity wrapSuccess(Object object) {
-        ResponseEntity responseEntity = new ResponseEntity();
-        responseEntity.setData(object);
-        return responseEntity;
+        Result result = new Result();
+        result.setData(object);
+        return ResponseEntity.ok(result);
     }
 
     /**
@@ -25,11 +27,11 @@ public class ResultUtils {
      * @return
      */
     public static ResponseEntity wrapFail(Object object, Integer errorCode, String errorMsg) {
-        ResponseEntity responseEntity = new ResponseEntity();
-        responseEntity.setData(object);
-        responseEntity.setErrorCode(errorCode);
-        responseEntity.setErrorMsg(errorMsg);
-        return responseEntity;
+        Result result = new Result();
+        result.setData(object);
+        result.setErrorCode(errorCode);
+        result.setErrorMsg(errorMsg);
+        return ResponseEntity.ok(result);
     }
 
 }
