@@ -22,6 +22,10 @@ public class StringUtils {
         }
     }
 
+    public static Boolean isBlank(String str) {
+        return !isNotBlank(str);
+    }
+
     public static boolean isAsciiPrintable(CharSequence cs) {
         if (cs == null) {
             return false;
