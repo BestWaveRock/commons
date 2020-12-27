@@ -49,6 +49,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter();
         stringHttpMessageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.TEXT_PLAIN));
         converters.add(stringHttpMessageConverter);
+
     }
 
     @Override
