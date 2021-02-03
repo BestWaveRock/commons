@@ -37,7 +37,7 @@ public class HttpConstant {
         /**
          * 业务处理错误，具体查看指定原因
          */
-        public static final Integer ERROR = 999;
+        public static final Integer ERROR = -1;
 
         /**
          * 未登录
